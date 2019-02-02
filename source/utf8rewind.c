@@ -556,26 +556,26 @@ UTF8_API size_t utf8envlocale()
 		https://www-01.ibm.com/support/knowledgecenter/ssw_aix_61/com.ibm.aix.nlsgdrf/support_languages_locales.htm
 	*/
 
-#if WIN32 || _WINDOWS
-	#define UTF8_LOCALE_CHECK(_name, _ansiCodepage, _oemCodepage) \
-		(codepage == _ansiCodepage || codepage == _oemCodepage)
+// #if WIN32 || _WINDOWS
+// 	#define UTF8_LOCALE_CHECK(_name, _ansiCodepage, _oemCodepage) \
+// 		(codepage == _ansiCodepage || codepage == _oemCodepage)
 
-	unsigned int codepage;
-	_locale_t locale = _get_current_locale();
+// 	unsigned int codepage;
+// 	_locale_t locale = _get_current_locale();
 
-	if (locale == 0)
-	{
-		return UTF8_LOCALE_DEFAULT;
-	}
+// 	if (locale == 0)
+// 	{
+// 		return UTF8_LOCALE_DEFAULT;
+// 	}
 
-	// Microsoft changed the name of the codepage member in VS2015.
+// 	// Microsoft changed the name of the codepage member in VS2015.
 
-	#if _MSC_VER >= 1900
-		codepage = ((__crt_locale_data_public*)(locale)->locinfo)->_locale_lc_codepage;
-	#else
-		codepage = locale->locinfo->lc_codepage;
-	#endif
-#else
+// 	#if _MSC_VER >= 1900
+// 		codepage = ((__crt_locale_data_public*)(locale)->locinfo)->_locale_lc_codepage;
+// 	#else
+// 		codepage = locale->locinfo->lc_codepage;
+// 	#endif
+// #else
 	#define UTF8_LOCALE_CHECK(_name, _ansiCodepage, _oemCodepage) \
 		!strncasecmp(locale, _name, 5)
 
@@ -584,7 +584,7 @@ UTF8_API size_t utf8envlocale()
 	{
 		return UTF8_LOCALE_DEFAULT;
 	}
-#endif
+//#endif
 
 	if (UTF8_LOCALE_CHECK("lt_lt", 1257, 775))
 	{
