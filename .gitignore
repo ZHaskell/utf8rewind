@@ -10,6 +10,7 @@ patches/*
 
 syntax: regexp
 [^/]*\.(sln|vcxproj).* # ignore generated projects
+*.xcodeproj
 
 # Visual Studio 2010
 syntax: glob

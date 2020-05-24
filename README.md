@@ -152,6 +152,10 @@ Use GYP to generate a solution:
 
 Open the solution in XCode and you can build the library and tests.
 
+### Updating unicode data ###
+
+Pull files from [UCD site](https://www.unicode.org/Public/UCD/latest/ucd/) and put them under `tools/converter/data`, run scripts under `tools/converter`.
+
 ### Running the tests ###
 
 After generating a solution, build and run the "tests-rewind" project. Verify that all tests pass on your system configuration before continuing.

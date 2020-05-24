@@ -75,7 +75,7 @@ namespace helpers {
 	std::string canonicalCombiningClass(const std::vector<unicode_t>& codepoints);
 	std::string canonicalCombiningClassToString(uint8_t value);
 
-	enum class QuickCheck
+	enum QuickCheck
 	{
 		NFC,
 		NFD,
