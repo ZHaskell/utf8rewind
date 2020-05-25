@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['normalization_20flags',['Normalization flags',['../group__normalization.html',1,'']]]
+  ['normalization_20flags_20',['Normalization flags',['../group__normalization.html',1,'']]]
 ];
