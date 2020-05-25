@@ -170,7 +170,8 @@ uint8_t compose_execute(ComposeState* state)
 				}
 				else if (
 					state->output->codepoint[cursor_current] >= HANGUL_S_FIRST &&
-					state->output->codepoint[cursor_current] <= HANGUL_S_LAST)
+					state->output->codepoint[cursor_current] <= HANGUL_S_LAST &&
+                    ((state->output->codepoint[cursor_current] - HANGUL_S_FIRST) % HANGUL_T_COUNT) == 0)
 				{
 					/* Check for Hangul LV and T pair */ 
 
