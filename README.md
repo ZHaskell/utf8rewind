@@ -4,6 +4,10 @@
 
 Thanks to [knight666](https://bitbucket.org/%7B766ef6f0-ceac-47b3-8ec9-bf398d169a00%7D/) who made this excellent library open sourced. This is a fork maintained for [Z](https://github.com/haskell-Z) project, currently using unicode version 13.0.
 
+## Documents ##
+
+Please read the documents [here](https://haskell-z.github.io/utf8rewind).
+
 ## Example ##
 
 ```
