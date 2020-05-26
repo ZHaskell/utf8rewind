@@ -1,6 +1,8 @@
 ## Introduction ##
 
-`utf8rewind` is a system library written in C designed to extend the default string handling functions with support for UTF-8 encoded text.
+`utf8rewind` is a system library written in C designed to extend the default string handling functions with support for UTF-8 encoded text. 
+
+Thanks to [knight666](https://bitbucket.org/%7B766ef6f0-ceac-47b3-8ec9-bf398d169a00%7D/) who made this excellent library open sourced. This is a fork maintained for [Z](https://github.com/haskell-Z) project, currently using unicode version 13.0.
 
 ## Example ##
 
@@ -91,14 +93,6 @@
 ## Licensing ##
 
 This project is licensed under the MIT license, a full copy of which should have been provided with the project.
-
-## Download ##
-
-[utf8rewind-1.5.0.zip (7.71 MB)](https://bitbucket.org/knight666/utf8rewind/downloads/utf8rewind-1.5.0.zip)
-
-### Clone in Mercurial ###
- 
-	hg clone https://bitbucket.org/knight666/utf8rewind utf8rewind
 
 ## Building the project ##
 

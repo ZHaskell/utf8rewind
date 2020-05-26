@@ -111,7 +111,7 @@
 	\def UTF8_VERSION_STRING
 	\brief The verion number as a string.
 */
-#define UTF8_VERSION_STRING  "1.5.1"
+#define UTF8_VERSION_STRING  "1.5.2"
 
 /*!
 	\def UTF8_VERSION_GUARD
