@@ -561,7 +561,7 @@ UTF8_API size_t utf8envlocale()
 		https://www-01.ibm.com/support/knowledgecenter/ssw_aix_61/com.ibm.aix.nlsgdrf/support_languages_locales.htm
 	*/
 
-#define UTF8_LOCALE_CHECK(_name, _ansiCodepage, _oemCodepage) \
+#define UTF8_LOCALE_CHECK(_name) \
 	!strncasecmp(locale, _name, 5)
 
 #if WIN32 || _WINDOWS
@@ -570,24 +570,33 @@ UTF8_API size_t utf8envlocale()
     char *locale = malloc(localeBufLen);
     GetUserDefaultLocaleName(localeW, LOCALE_NAME_MAX_LENGTH);
     wcstombs(locale, localeW, localeBufLen);
-#else
-	const char* locale = setlocale(LC_ALL, 0);
-#endif
-	if (locale == 0)
-	{
-		return UTF8_LOCALE_DEFAULT;
-	}
-	if (UTF8_LOCALE_CHECK("lt_lt", 1257, 775))
+	if (UTF8_LOCALE_CHECK("lt-lt"))
 	{
 		return UTF8_LOCALE_LITHUANIAN;
 	}
 	else if (
-		UTF8_LOCALE_CHECK("tr_tr", 1254, 857) ||
-		UTF8_LOCALE_CHECK("az_az", 1254, 857))
+		UTF8_LOCALE_CHECK("tr-tr") ||
+		UTF8_LOCALE_CHECK("az-az"))
 	{
 		return UTF8_LOCALE_TURKISH_AND_AZERI_LATIN;
 	}
-
+#else
+	const char* locale = setlocale(LC_ALL, 0);
+	if (locale == 0)
+	{
+		return UTF8_LOCALE_DEFAULT;
+	}
+	if (UTF8_LOCALE_CHECK("lt_lt"))
+	{
+		return UTF8_LOCALE_LITHUANIAN;
+	}
+	else if (
+		UTF8_LOCALE_CHECK("tr_tr") ||
+		UTF8_LOCALE_CHECK("az_az"))
+	{
+		return UTF8_LOCALE_TURKISH_AND_AZERI_LATIN;
+	}
+#endif
 	return UTF8_LOCALE_DEFAULT;
 }
 
