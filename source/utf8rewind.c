@@ -36,7 +36,7 @@
 
 #if WIN32 || _WINDOWS
 #include <windows.h>
-#include <winnls.h.h>
+#include <winnls.h>
 #endif
 
 size_t utf8len(const char* text)
@@ -566,7 +566,7 @@ UTF8_API size_t utf8envlocale()
 
 #if WIN32 || _WINDOWS
     WCHAR localeW[LOCALE_NAME_MAX_LENGTH];
-	size_t localeBufLen = LOCALE_NAME_MAX_LENGTH * sizeof(char);
+    size_t localeBufLen = LOCALE_NAME_MAX_LENGTH * sizeof(char);
     char *locale = malloc(localeBufLen);
     GetUserDefaultLocaleName(localeW, LOCALE_NAME_MAX_LENGTH);
     wcstombs(locale, localeW, localeBufLen);
