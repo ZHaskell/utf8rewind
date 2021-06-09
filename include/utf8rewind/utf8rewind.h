@@ -1116,7 +1116,7 @@ UTF8_API size_t utf8towide(const char* input, size_t inputSize, wchar_t* target,
 
 	\sa utf8iscategory
 */
-UTF8_API const char* utf8seek(const char* text, size_t textSize, const char* textStart, off_t offset, int direction);
+UTF8_API const char* utf8seek(const char* text, size_t textSize, const char* textStart, size_t offset, int direction);
 
 /*!
 	\brief Returns the environment's locale as an enum value.
