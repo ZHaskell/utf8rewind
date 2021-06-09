@@ -2,11 +2,11 @@
 
 `utf8rewind` is a system library written in C designed to extend the default string handling functions with support for UTF-8 encoded text. 
 
-Thanks to [knight666](https://bitbucket.org/%7B766ef6f0-ceac-47b3-8ec9-bf398d169a00%7D/) who made this excellent library open sourced. This is a fork maintained for [Z](https://github.com/haskell-Z) project, currently using unicode version 13.0.
+Thanks to [knight666](https://bitbucket.org/%7B766ef6f0-ceac-47b3-8ec9-bf398d169a00%7D/) who made this excellent library open sourced. This is a fork maintained for [Z.Haskell](https://z.haskell.world) project, currently using unicode version 13.0.
 
 ## Documents ##
 
-Please read the documents [here](https://haskell-z.github.io/utf8rewind).
+Please read the documents [here](https://ZHaskell.github.io/utf8rewind).
 
 ## Example ##
 
