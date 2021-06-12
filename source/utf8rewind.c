@@ -563,9 +563,6 @@ UTF8_API size_t utf8envlocale()
 
 // internal helper to avoid the use of non-standard strncasecmp
 int __strncasecmp(const char* s1, const char* s2, size_t n) {
-  assert(s1 != NULL);
-  assert(s2 != NULL);
-
   if (n == 0)
     return 0;
 
