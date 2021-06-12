@@ -561,8 +561,27 @@ UTF8_API size_t utf8envlocale()
 		https://www-01.ibm.com/support/knowledgecenter/ssw_aix_61/com.ibm.aix.nlsgdrf/support_languages_locales.htm
 	*/
 
+// internal helper to avoid the use of non-standard strncasecmp
+int __strncasecmp(const char* s1, const char* s2, size_t n) {
+  assert(s1 != NULL);
+  assert(s2 != NULL);
+
+  if (n == 0)
+    return 0;
+
+  do {
+    if (tolower((unsigned char) *s1) != tolower((unsigned char) *s2++))
+      return (int)tolower((unsigned char)*s1) -
+	(int) tolower((unsigned char) *--s2);
+    if (*s1++ == 0)
+      break;
+  } while (--n != 0);
+
+  return 0;
+}
+
 #define UTF8_LOCALE_CHECK(_name) \
-	!strncasecmp(locale, _name, 5)
+	!__strncasecmp(locale, _name, 5)
 
 #if WIN32 || _WINDOWS
     WCHAR localeW[LOCALE_NAME_MAX_LENGTH];

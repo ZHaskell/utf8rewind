@@ -62,6 +62,7 @@
 	Custom type definitions used throughout the library.
 */
 
+#include <ctype.h>
 #include <locale.h>
 #include <stddef.h>
 #include <stdio.h>
