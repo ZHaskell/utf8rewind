@@ -549,18 +549,6 @@ const char* utf8seek(const char* text, size_t textSize, const char* textStart, o
 	}
 }
 
-UTF8_API size_t utf8envlocale()
-{
-	/*
-		Sources for locales and code pages
-
-		Windows
-		https://msdn.microsoft.com/en-US/goglobal/bb896001.aspx
-
-		POSIX
-		https://www-01.ibm.com/support/knowledgecenter/ssw_aix_61/com.ibm.aix.nlsgdrf/support_languages_locales.htm
-	*/
-
 // internal helper to avoid the use of non-standard strncasecmp
 int __strncasecmp(const char* s1, const char* s2, size_t n) {
   if (n == 0)
@@ -576,6 +564,18 @@ int __strncasecmp(const char* s1, const char* s2, size_t n) {
 
   return 0;
 }
+
+UTF8_API size_t utf8envlocale()
+{
+	/*
+		Sources for locales and code pages
+
+		Windows
+		https://msdn.microsoft.com/en-US/goglobal/bb896001.aspx
+
+		POSIX
+		https://www-01.ibm.com/support/knowledgecenter/ssw_aix_61/com.ibm.aix.nlsgdrf/support_languages_locales.htm
+	*/
 
 #define UTF8_LOCALE_CHECK(_name) \
 	!__strncasecmp(locale, _name, 5)
