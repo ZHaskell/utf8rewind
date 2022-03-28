@@ -31,7 +31,7 @@
 #define DECOMPOSE_INDEX1_SHIFT (12)
 #define DECOMPOSE_INDEX2_SHIFT (5)
 
-static const unicode_t DECOMPOSE_INDEX1_MASK = MAX_LEGAL_UNICODE;
+/* static const unicode_t DECOMPOSE_INDEX1_MASK = MAX_LEGAL_UNICODE; */
 static const unicode_t DECOMPOSE_INDEX2_MASK = (1 << DECOMPOSE_INDEX1_SHIFT) - 1;
 static const unicode_t DECOMPOSE_DATA_MASK = (1 << DECOMPOSE_INDEX2_SHIFT) - 1;
 
